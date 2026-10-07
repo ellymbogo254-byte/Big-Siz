@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Big Siz 😂💰</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: white;
+    background:
+        radial-gradient(circle at top, #4b176d, #16001f 70%);
+    overflow: hidden;
+}
+
+.container {
+    width: 92%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.screen {
+    display: none;
+    animation: fadeIn 0.6s ease;
+}
+
+.screen.active {
+    display: block;
+}
+
+.card {
+    padding: 30px 20px;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+h1 {
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 19px;
+    line-height: 1.6;
+}
+
+.emoji {
+    font-size: 65px;
+    animation: bounce 1.5s infinite;
+}
+
+button {
+    border: none;
+    padding: 15px 25px;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+
+.yes {
+    background: #ff3b81;
+    color: white;
+}
+
+.no {
+    background: #555;
+    color: white;
+}
+
+.buttons {
+    position: relative;
+    min-height: 100px;
+    margin-top: 20px;
+}
+
+#noBtn {
+    position: relative;
+}
+
+.money {
+    font-size: 80px;
+    animation: bounce 1s infinite;
+}
+
+.amount {
+    font-size: 60px;
+    font-weight: bold;
+    color: #ffd700;
+    margin: 20px 0;
+}
+
+.request {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px 0;
+}
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    font-size: 25px;
+    pointer-events: none;
+    animation: floatUp 3s linear forwards;
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes bounce {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+}
+
+@keyframes floatUp {
+
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- SCREEN 1 -->
+
+    <div class="screen active" id="screen1">
+
+        <div class="card">
+
+            <div class="emoji">👀</div>
+
+            <h1>Big Siz...</h1>
+
+            <p>
+                I need to ask you something very important.
+                Please answer honestly 😂
+            </p>
+
+            <button class="yes" onclick="nextScreen(2)">
+                I'm Listening 👂
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- SCREEN 2 -->
+
+    <div class="screen" id="screen2">
+
+        <div class="card">
+
+            <div class="emoji">💰</div>
+
+            <h1>Quick Question...</h1>
+
+            <p>
+                Big Siz, unaeza kuwa na doh saa hii? 👀💸
+            </p>
+
+            <div class="buttons" id="buttonArea">
+
+                <button class="yes" onclick="yesAnswer()">
+                    YES 💰
+                </button>
+
+                <button class="no" id="noBtn">
+                    NO 😭
+                </button>
+
+            </div>
+
+            <p>
+                Choose carefully 😂
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- SCREEN 3 -->
+
+    <div class="screen" id="screen3">
+
+        <div class="card">
+
+            <div class="money">💸</div>
+
+            <h1>Perfect! 😌</h1>
+
+            <p>
+                Since umesema YES...
+            </p>
+
+            <p>
+                Nikona a very small request. 😂
+            </p>
+
+            <div class="request">
+
+                <p>AMOUNT REQUESTED</p>
+
+                <div class="amount">
+                    KSh 500
+                </div>
+
+                <p>
+                    Please send it to your little bro ❤️😂
+                </p>
+
+            </div>
+
+            <button class="yes" onclick="sentMoney()">
+                Okay, I'll Send It 😂
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- SCREEN 4 -->
+
+    <div class="screen" id="screen4">
+
+        <div class="card">
+
+            <div class="emoji">🙏😂</div>
+
+            <h1>Nashukuru big Siz! ❤️</h1>
+
+            <p>
+                You have officially made your little bro very happy. 😂
+            </p>
+
+            <p>
+                May your money multiply! 💰✨
+            </p>
+
+            <button class="yes" onclick="nextScreen(5)">
+                One More Thing 👀
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- SCREEN 5 -->
+
+    <div class="screen" id="screen5">
+
+        <div class="card">
+
+            <div class="emoji">😂</div>
+
+            <h1>Actually...</h1>
+
+            <p>
+                I just wanted to see how quickly you'd agree
+                to send KSh 500. 😭😂
+            </p>
+
+            <p>
+                Hope utashtua mpesa yangu manze! 🤣
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function nextScreen(number) {
+
+    document.querySelectorAll(".screen").forEach(function(screen) {
+
+        screen.classList.remove("active");
+
+    });
+
+    document.getElementById("screen" + number)
+        .classList.add("active");
+
+}
+
+
+/* YES BUTTON */
+
+function yesAnswer() {
+
+    nextScreen(3);
+
+    createHearts();
+
+}
+
+
+/* MONEY SENT */
+
+function sentMoney() {
+
+    nextScreen(4);
+
+    createHearts();
+
+}
+
+
+/* RUNNING NO BUTTON */
+
+const noBtn = document.getElementById("noBtn");
+const buttonArea = document.getElementById("buttonArea");
+
+function moveButton() {
+
+    const areaWidth = buttonArea.clientWidth;
+    const areaHeight = buttonArea.clientHeight;
+
+    const buttonWidth = noBtn.offsetWidth;
+    const buttonHeight = noBtn.offsetHeight;
+
+    const maxX = areaWidth - buttonWidth;
+    const maxY = areaHeight - buttonHeight;
+
+    const randomX = Math.random() * maxX;
+    const randomY = Math.random() * maxY;
+
+    noBtn.style.position = "absolute";
+
+    noBtn.style.left = randomX + "px";
+
+    noBtn.style.top = randomY + "px";
+
+}
+
+
+/* Desktop */
+
+noBtn.addEventListener("mouseenter", moveButton);
+
+
+/* Phone */
+
+noBtn.addEventListener("touchstart", function(event) {
+
+    event.preventDefault();
+
+    moveButton();
+
+});
+
+
+/* Floating emojis */
+
+function createHearts() {
+
+    for (let i = 0; i < 15; i++) {
+
+        const heart = document.createElement("div");
+
+        heart.className = "heart";
+
+        const emojis = [
+            "💰",
+            "💸",
+            "😂",
+            "❤️",
+            "🤑",
+            "💵"
+        ];
+
+        heart.innerHTML =
+            emojis[Math.floor(Math.random() * emojis.length)];
+
+        heart.style.left =
+            Math.random() * 100 + "vw";
+
+        heart.style.animationDuration =
+            (2 + Math.random() * 2) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(function() {
+
+            heart.remove();
+
+        }, 4000);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
